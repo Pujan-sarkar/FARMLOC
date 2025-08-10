@@ -1,0 +1,135 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "coldStorage": "Cold Storage",
+    "marketplace": "Marketplace", 
+    "reviews": "Reviews",
+    "contact": "Contact Us",
+    "login": "Login"
+  },
+  "home": {
+    "title": "Connecting Cold Storages. Empowering Farmers. 🌾 🧊",
+    "description": "FARMLOC bridges the gap between rural producers and cold storage facilities. Shop fresh groceries and support local farming.",
+    "exploreButton": "Explore More",
+    "stats": {
+      "coldStorage": "Cold Storage Units",
+      "farmers": "Farmers Connected",
+      "products": "Marketplace Products"
+    },
+    "imageAlts": {
+      "main": "Main",
+      "side1": "Side 1",
+      "side2": "Side 2"
+    }
+  },
+  "about": {
+    "title": "About Us 🥦",
+    "paragraph1": "Welcome to FARMLOC — your trusted companion in connecting with nearby cold storages and accessing fresh groceries directly from farms. Whether you're a farmer, a health-conscious buyer, or just someone who loves supporting local produce, FARMLOC has something for you.",
+    "paragraph2": "We believe in smarter agriculture and better food distribution. With FARMLOC, you can locate the nearest cold storage, reduce food spoilage, and shop organic and seasonal goods at fair prices — all while supporting sustainability and rural livelihoods.",
+    "learnMoreButton": "Learn More",
+    "imageAlts": {
+      "main": "Main",
+      "card": "Card"
+    }
+  },
+  "services": {
+    "heading": "Our Services",
+    "items": {
+      "coldStorage": {
+        "title": "Nearby Cold Storage",
+        "description": "Locate the closest cold storage to keep your harvest fresh and reduce wastage."
+      },
+      "marketplace": {
+        "title": "Grocery Marketplace",
+        "description": "Sell or buy farm-fresh groceries directly from local farmers and vendors."
+      },
+      "support": {
+        "title": "Farmer Support",
+        "description": "Access expert advice, weather updates, and government schemes to boost productivity."
+      }
+    }
+  },
+  "reviews": {
+    "heading": "What do our users say?",
+    "subtext": "Trusted by farmers, buyers, and cooperatives alike — FARMLOC makes local sourcing, storage, and food access simpler, smarter, and more sustainable.",
+    "items": {
+      "shreya": {
+        "name": "Shreya Mehta",
+        "text": "FARMLOC has made it incredibly easy for me to store my produce safely. I can now locate cold storage near my farm instantly, reducing spoilage and increasing profits!"
+      },
+      "john": {
+        "name": "John Doe",
+        "text": "As a health-conscious buyer, I love that FARMLOC connects me directly with local farmers. The groceries are fresh, organic, and fairly priced — plus I'm supporting rural livelihoods!"
+      },
+      "michael": {
+        "name": "Michael Johnson",
+        "text": "Managing our farmers' cooperative has become so efficient with FARMLOC. We can find shared storage and coordinate fresh deliveries with just a few clicks. Brilliant initiative!"
+      },
+      "aarti": {
+        "name": "Aarti Sharma",
+        "text": "I've started recommending FARMLOC to all the women in our self-help group. It makes cold storage and market access easier and safer for all of us!"
+      },
+      "ravi": {
+        "name": "Ravi Patel",
+        "text": "With FARMLOC, I've been able to sell directly to customers and save money on transport. It's empowering for small farmers like me!"
+      }
+    }
+  },
+  "faq": {
+    "heading": "Most asked Questions?",
+    "imageAlt": "FAQ Illustration",
+    "items": {
+      "whatIsFarmloc": {
+        "question": "What is FARMLOC and how does it work?",
+        "answer": "FARMLOC is a platform that connects farmers, buyers, and cold storage providers. It helps users find nearby cold storages and purchase fresh, locally sourced produce directly from farms, promoting smarter agriculture and efficient distribution."
+      },
+      "reduceSpoilage": {
+        "question": "How does FARMLOC help reduce food spoilage?",
+        "answer": "By linking farmers to the nearest available cold storage facilities, FARMLOC ensures perishable produce is preserved properly, minimizing spoilage and post-harvest losses."
+      },
+      "availability": {
+        "question": "Is FARMLOC available in all regions?",
+        "answer": "FARMLOC is being launched in phases. While it's not yet available everywhere, you can enter your location on the platform to check availability in your region."
+      },
+      "sustainability": {
+        "question": "How does FARMLOC support sustainability?",
+        "answer": "FARMLOC supports sustainability by promoting local food systems, reducing the distance food travels, cutting down on waste, and encouraging responsible storage and consumption practices."
+      },
+      "cooperatives": {
+        "question": "Can FARMLOC be used by cooperatives or farmer groups?",
+        "answer": "Yes, FARMLOC is designed to support both individual farmers and organized groups or cooperatives. It allows bulk listing of produce and shared access to nearby cold storages for streamlined operations."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} FARMLOC — Empowering Farmers & Local Markets 🌾",
+    "headings": {
+      "quickLinks": "Quick Links",
+      "explore": "Explore",
+      "support": "Support"
+    },
+    "quickLinks": {
+      "home": "Home",
+      "about": "About Us",
+      "coldStorage": "Cold Storage",
+      "marketplace": "Marketplace"
+    },
+    "explore": {
+      "shop": "Shop Fresh",
+      "locate": "Find Nearby Storage",
+      "blogs": "Read Blogs",
+      "faq": "FAQs"
+    },
+    "support": {
+      "contact": "Contact Us",
+      "supportFarmloc": "Support FARMLOC"
+    }
+  },
+  "language": {
+    "select": "Select Language",
+    "english": "English",
+    "hindi": "हिंदी",
+    "marathi": "मराठी"
+  }
+}

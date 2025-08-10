@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import "../index.css";
 import shreya from "../assets/images/review1.png";
 import john from "../assets/images/review2.png";
@@ -6,42 +7,43 @@ import michael from "../assets/images/review3.png";
 import aarti from "../assets/images/review4.png";
 import ravi from "../assets/images/review5.png";
 
-const reviews = [
-  {
-    name: "Shreya Mehta",
-    image: shreya,
-    stars: 5,
-    text: "FARMLOC has made it incredibly easy for me to store my produce safely. I can now locate cold storage near my farm instantly, reducing spoilage and increasing profits!",
-  },
-  {
-    name: "John Doe",
-    image: john,
-    stars: 5,
-    text: "As a health-conscious buyer, I love that FARMLOC connects me directly with local farmers. The groceries are fresh, organic, and fairly priced — plus I’m supporting rural livelihoods!",
-  },
-  {
-    name: "Michael Johnson",
-    image: michael,
-    stars: 5,
-    text: "Managing our farmers' cooperative has become so efficient with FARMLOC. We can find shared storage and coordinate fresh deliveries with just a few clicks. Brilliant initiative!",
-  },
-  {
-    name: "Aarti Sharma",
-    image: aarti,
-    stars: 5,
-    text: "I’ve started recommending FARMLOC to all the women in our self-help group. It makes cold storage and market access easier and safer for all of us!",
-  },
-  {
-    name: "Ravi Patel",
-    image: ravi,
-    stars: 5,
-    text: "With FARMLOC, I’ve been able to sell directly to customers and save money on transport. It’s empowering for small farmers like me!",
-  },
-];
-
 const FARMLocReviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [highlightedIndex, setHighlightedIndex] = useState(null);
+  const { t } = useTranslation();
+
+  const reviews = [
+    {
+      name: t('reviews.items.shreya.name'),
+      image: shreya,
+      stars: 5,
+      text: t('reviews.items.shreya.text'),
+    },
+    {
+      name: t('reviews.items.john.name'),
+      image: john,
+      stars: 5,
+      text: t('reviews.items.john.text'),
+    },
+    {
+      name: t('reviews.items.michael.name'),
+      image: michael,
+      stars: 5,
+      text: t('reviews.items.michael.text'),
+    },
+    {
+      name: t('reviews.items.aarti.name'),
+      image: aarti,
+      stars: 5,
+      text: t('reviews.items.aarti.text'),
+    },
+    {
+      name: t('reviews.items.ravi.name'),
+      image: ravi,
+      stars: 5,
+      text: t('reviews.items.ravi.text'),
+    },
+  ];
 
   const handleDotClick = (index) => {
     setCurrentSlide(index);
@@ -58,10 +60,9 @@ const FARMLocReviewSection = () => {
 
   return (
     <div id="review" className="review-section">
-      <h2 className="review-heading">What do our users say?</h2>
+      <h2 className="review-heading">{t('reviews.heading')}</h2>
       <p className="review-subtext">
-        Trusted by farmers, buyers, and cooperatives alike — FARMLOC makes local sourcing,
-        storage, and food access simpler, smarter, and more sustainable.
+        {t('reviews.subtext')}
       </p>
 
       <div className="review-cards">

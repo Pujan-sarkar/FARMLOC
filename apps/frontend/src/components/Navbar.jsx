@@ -2,22 +2,25 @@ import React, { useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiMenu, BiMoon, BiSun } from "react-icons/bi";
 import { FaLeaf } from "react-icons/fa";
-
-const navLinks = [
-  { path: "/", section: "home", display: "Home" },
-  { path: "/", section: "about", display: "About Us" },
-  { path: "/", section: "cold-storage", display: "Cold Storage" },
-  { path: "/", section: "market", display: "Marketplace" },
-  { path: "/", section: "review", display: "Reviews" },
-  { path: "/", section: "contact", display: "Contact Us" },
-];
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const menuRef = useRef(null);
   const navigate = useNavigate();
   const [theme, setTheme] = useState("light");
+  const { t } = useTranslation();
 
-  // Apply theme class to body when theme changes
+  const navLinks = [
+    { path: "/", section: "home", display: t('navbar.home') },
+    { path: "/", section: "about", display: t('navbar.about') },
+    { path: "/", section: "cold-storage", display: t('navbar.coldStorage') },
+    { path: "/", section: "market", display: t('navbar.marketplace') },
+    { path: "/", section: "review", display: t('navbar.reviews') },
+    { path: "/", section: "contact", display: t('navbar.contact') },
+  ];
+
+
   useEffect(() => {
     if (theme === "dark") {
       document.body.classList.add("dark");
@@ -69,7 +72,10 @@ const Navbar = () => {
         </nav>
 
         <div className="nav-actions">
-          <Link to="/login" className="login-btn">Login</Link>
+          <div className="language-selector-container" style={{ marginRight: '10px' }}>
+            <LanguageSelector />
+          </div>
+          <Link to="/login" className="login-btn">{t('navbar.login')}</Link>
           <button onClick={toggleTheme} className="theme-btn">
             {theme === "light" ? <BiMoon /> : <BiSun />}
           </button>
