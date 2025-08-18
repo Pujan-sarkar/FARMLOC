@@ -1,7 +1,7 @@
 /* Marketplace Styles - Matching FARMLOC Design */
 .marketplace-section {
   padding: 3rem 2rem;
-  background-color: #f9fbf8;
+  /* background-color: #f9fbf8; */
 }
 
 .marketplace-container {
@@ -79,7 +79,7 @@
   padding: 8px 16px;
   border-radius: 20px;
   border: 1px solid #d1e7dd;
-  background: white;
+  /* background: white; */
   display: flex;
   align-items: center;
   gap: 8px;
