@@ -102,7 +102,7 @@ const Marketplace = () => {
             </button>
             <button 
               className={activeCategory === 'dairy' ? 'active' : ''}
-              onClick={() => setActiveCategory('dairy')}
+              onClick={() => setActiveCategory('dairy')} 
             >
               <FaTruck /> Dairy
             </button>
