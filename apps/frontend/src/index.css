@@ -1106,3 +1106,36 @@ body.dark .social-icon {
   transition: background 0.3s ease;
   border: 1px solid white;
 }
+/* Auth Page Text Enhancements */
+.auth-right h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #137f13; /* Dark green for better visibility */
+}
+
+.auth-form label {
+  color: #1c1c1c; /* Dark text for clarity */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.auth-form input::placeholder {
+  color: #d7caca; /* Medium gray for better visibility */
+  font-size: 0.95rem;
+}
+
+.auth-right p {
+  color: #333; /* Ensure readability */
+  font-size: 1rem;
+}
+
+.auth-right p a {
+  color: #137f13;
+  font-weight: 600;
+}
+
+.auth-right p a:hover {
+  text-decoration: underline;
+  color: #0e5e0e;
+}

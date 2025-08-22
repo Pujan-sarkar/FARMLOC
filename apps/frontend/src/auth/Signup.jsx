@@ -18,16 +18,16 @@ const Signup = () => {
         <h2>Create an <span className="highlight">Account</span></h2>
         <form className="auth-form">
           <label>First Name</label>
-          <input type="text" placeholder="First name" required />
+          <input type="text" placeholder="Enter Your First Name" required />
 
           <label>Last Name</label>
-          <input type="text" placeholder="Last name" required />
+          <input type="text" placeholder="Enter Your Last Name" required />
 
           <label>Email Address</label>
-          <input type="email" placeholder="Enter email" required />
+          <input type="email" placeholder="Enter Your Email Address" required />
 
           <label>Enter Password</label>
-          <input type="password" placeholder="Enter password" required />
+          <input type="password" placeholder="Enter Your Password" required />
 
           <button type="submit" className="submit-button">Sign Up</button>
         </form>

@@ -18,10 +18,10 @@ const Login = () => {
         <h2>Welcome <span className="highlight">Back</span></h2>
         <form className="auth-form">
           <label>Email Address</label>
-          <input type="email" placeholder="Enter email" required />
+          <input type="email" placeholder="Enter Your Email Address" required />
 
           <label>Password</label>
-          <input type="password" placeholder="Enter password" required />
+          <input type="password" placeholder="Enter Your Password" required />
 
           <button type="submit" className="submit-button">Log In</button>
         </form>
