@@ -2,11 +2,26 @@
   font-family: 'Segoe UI', Tahoma, sans-serif;
   padding: 2rem 0;
   background-color: #f8f9fa;
+  transition: background-color 0.3s;
 }
 
 .contact-us h2 {
   color: #2e7d32; /* Green shade */
   font-weight: 700;
+  transition: color 0.3s;
+}
+
+/* Dark theme support */
+body.dark .contact-us {
+  background-color: rgba(30, 50, 30, 0.18);
+}
+
+body.dark .contact-us h2 {
+  color: #71f66a;
+}
+
+body.dark .contact-us p {
+  color: #cfd8dc;
 }
 
 .contact-container {
@@ -16,6 +31,13 @@
   overflow: hidden;
   margin: 0 auto;
   max-width: 1200px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Dark theme for contact container */
+body.dark .contact-container {
+  background: #26304a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .contact-row {
@@ -46,6 +68,11 @@
   border-radius: 8px;
 }
 
+/* Dark theme for SVG */
+body.dark .svg-background {
+  fill: #26304a !important;
+}
+
 .form-content {
   width: 100%;
   height: 100%;
@@ -67,6 +94,12 @@
   color: #333;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+/* Dark theme for form labels */
+body.dark .form-section label {
+  color: #e0e0e0;
 }
 
 .required {
@@ -86,12 +119,29 @@
   border-radius: 4px;
   font-size: 0.9rem;
   font-family: inherit;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s, color 0.3s;
+  background-color: white;
+  color: #333;
 }
 
 .form-input:focus {
   outline: none;
   border-color: #2e7d32;
+}
+
+/* Dark theme for form inputs */
+body.dark .form-input {
+  background-color: #3a4663;
+  border-color: #4a5568;
+  color: #e0e0e0;
+}
+
+body.dark .form-input:focus {
+  border-color: #71f66a;
+}
+
+body.dark .form-input::placeholder {
+  color: #a0a0a0;
 }
 
 .form-input.full-width {
@@ -107,6 +157,12 @@
   height: 1px;
   background: linear-gradient(to right, transparent, #e0e0e0, transparent);
   margin: 1.5rem 0;
+  transition: background 0.3s;
+}
+
+/* Dark theme for divider */
+body.dark .divider {
+  background: linear-gradient(to right, transparent, #4a5568, transparent);
 }
 
 .submit-button {
@@ -126,6 +182,16 @@
 
 .submit-button:hover {
   background: #1b5e20;
+}
+
+/* Dark theme for submit button */
+body.dark .submit-button {
+  background: #71f66a;
+  color: #232b3e;
+}
+
+body.dark .submit-button:hover {
+  background: #5ac55a;
 }
 
 /* Responsive adjustments */

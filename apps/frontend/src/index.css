@@ -506,6 +506,7 @@ body.dark .marquee-content {
   font-family: "Segoe UI", sans-serif;
   border-radius: 100px 100px 0 0;
   border: 2px solid #52a3525b;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 .footer-leaf {
@@ -550,12 +551,14 @@ body.dark .marquee-content {
   font-size: 24px;
   font-weight: bold;
   color: #137f13;
+  transition: color 0.3s;
 }
 
 .footer-description {
   font-size: 14px;
   color: #444;
   margin: 15px 0;
+  transition: color 0.3s;
 }
 
 .footer-divide-description {
@@ -565,6 +568,7 @@ body.dark .marquee-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.3s;
 }
 
 .footer-socials {
@@ -608,6 +612,7 @@ body.dark .marquee-content {
   margin-bottom: 15px;
   color: #1c1c1c;
   position: relative;
+  transition: color 0.3s;
 }
 
 .footer-column h2::before{
@@ -618,6 +623,7 @@ body.dark .marquee-content {
     bottom: 0;
     left: 0;
     border-bottom: 2px solid #1c1c1c;
+    transition: border-bottom-color 0.3s;
 }
 
 .footer-column ul {
@@ -837,6 +843,12 @@ body.dark .marquee-content {
 .review-section {
   text-align: center;
   padding: 4rem 2rem;
+  transition: background-color 0.3s;
+}
+
+/* Dark theme for review section */
+body.dark .review-section {
+  background-color: rgba(30, 50, 30, 0.18);
 }
 
 .review-heading {
@@ -867,7 +879,7 @@ body.dark .marquee-content {
   width: 300px;
   text-align: left;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   color: #000000;
   cursor: pointer;
 }
@@ -893,6 +905,10 @@ body.dark .marquee-content {
   gap: 1rem;
 }
 
+.reviewer h4 {
+  transition: color 0.3s;
+}
+
 .reviewer img {
   width: 50px;
   height: 50px;
@@ -907,6 +923,7 @@ body.dark .marquee-content {
 .review-text {
   font-size: 0.95rem;
   line-height: 1.5;
+  transition: color 0.3s;
 }
 
 .slider-indicator {
@@ -920,10 +937,46 @@ body.dark .marquee-content {
   margin: 0 6px;
   background-color: #ccc;
   border-radius: 50%;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .dot.active {
   background-color: #186c2c;
+}
+
+/* Dark theme for review cards */
+body.dark .review-card {
+  background-color: #26304a;
+  color: #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #3a4663;
+}
+
+body.dark .review-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .review-card.highlighted {
+  background-color: rgba(113, 246, 106, 0.1);
+  color: #e0e0e0;
+  border: 1px solid #71f66a;
+}
+
+body.dark .review-text {
+  color: #cfd8dc;
+}
+
+body.dark .reviewer h4 {
+  color: #71f66a;
+}
+
+body.dark .dot {
+  background-color: #4a5568;
+}
+
+body.dark .dot.active {
+  background-color: #71f66a;
 }
 body.dark {
   background-color: #1a1a1a;
@@ -1062,9 +1115,9 @@ body.dark .review-heading {
 }
 
 /* Dark theme for footer */
-body.dark footer {
-  background: white;
-  border: 2px solid rgba(113, 246, 106, 0.418);
+body.dark .footer {
+  background: linear-gradient(rgba(30, 50, 30, 0.8), rgba(40, 60, 40, 0.6));
+  border: 2px solid rgba(113, 246, 106, 0.3);
 }
 
 body.dark .footer-socials .social-icon svg {
@@ -1092,10 +1145,39 @@ body.dark .footer-leaf {
   z-index: 0;
 }
 
+/* Dark theme for footer text elements */
+body.dark .footer-logo h1 {
+  color: #71f66a;
+}
+
+body.dark .footer-description {
+  color: #cfd8dc;
+}
+
+body.dark .footer-divide-description {
+  color: #cfd8dc;
+}
+
+body.dark .footer-column h2 {
+  color: #71f66a;
+}
+
+body.dark .footer-column h2::before {
+  border-bottom: 2px solid #71f66a;
+}
+
+body.dark .footer-column a {
+  color: #cfd8dc;
+}
+
+body.dark .footer-column a:hover {
+  color: #71f66a;
+}
+
 body.dark .social-icon {
   width: 32px;
   height: 32px;
-  background-color: #ffffff;
+  background-color: #52a352;
   color: white;
   display: flex;
   justify-content: center;
@@ -1104,5 +1186,5 @@ body.dark .social-icon {
   font-size: 18px;
   text-decoration: none;
   transition: background 0.3s ease;
-  border: 1px solid white;
+  border: 1px solid #52a352;
 }

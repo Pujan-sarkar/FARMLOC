@@ -6,6 +6,12 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   height: 100%;
   min-height: 400px;
+  transition: box-shadow 0.3s;
+}
+
+/* Dark theme for map container */
+body.dark .map-container {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .map-overlay {
@@ -18,12 +24,18 @@
 .storage-card {
   border-radius: 12px;
   border: 1px solid rgba(113, 246, 106, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .storage-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(113, 246, 106, 0.15);
+}
+
+/* Dark theme for storage cards */
+body.dark .storage-card {
+  background-color: #26304a;
+  border-color: rgba(113, 246, 106, 0.2);
 }
 
 /* Rating Stars */

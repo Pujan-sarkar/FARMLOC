@@ -24,7 +24,7 @@ const Contact = () => {
                   className="contact-svg"
                 >
                   {/* Background */}
-                  <rect width="400" height="300" fill="#f8f9fa" />
+                  <rect width="400" height="300" fill="#f8f9fa" className="svg-background" />
 
                   {/* Background city buildings */}
                   <g opacity="0.1">
