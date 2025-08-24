@@ -16,10 +16,20 @@
     "vite": "^7.1.1"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
     "axios": "^1.11.0",
     "bootstrap": "^5.3.7",
+    "i18next": "^25.4.1",
+    "leaflet": "^1.9.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.0"
+    "react-i18next": "^15.7.2",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.8.0",
+    "recharts": "^3.1.2",
+    "workbox-core": "^7.3.0",
+    "workbox-precaching": "^7.3.0",
+    "workbox-routing": "^7.3.0",
+    "workbox-strategies": "^7.3.0"
   }
 }
