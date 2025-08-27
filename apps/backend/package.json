@@ -10,7 +10,8 @@
         "lint:check": "eslint .",
         "lint:fix": "eslint --fix .",
         "start": "node src/index.js",
-        "dev": "nodemon src/index.js"
+        "dev": "nodemon src/index.js",
+        "build:templates": "npx babel \"templates/**/*.{js,jsx}\" --out-dir loaded/templates"
     },
     "repository": {
         "type": "git",
@@ -23,6 +24,7 @@
     },
     "homepage": "https://github.com/BoBsRepository/create-express-js-template#readme",
     "dependencies": {
+        "@react-email/components": "^0.5.1",
         "bcryptjs": "^2.4.3",
         "compression": "^1.7.4",
         "cookie-parser": "^1.4.6",
@@ -36,11 +38,19 @@
         "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.0.3",
         "morgan": "^1.10.0",
+        "nodemailer": "^7.0.5",
         "nodemon": "^3.0.2",
+        "react": "^19.1.1",
+        "react-email": "^4.2.8",
         "validator": "^13.11.0",
         "xss-clean": "^0.1.4"
     },
     "devDependencies": {
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.3",
+        "@babel/plugin-transform-react-jsx": "^7.27.1",
+        "@babel/preset-env": "^7.28.3",
+        "@babel/preset-react": "^7.27.1",
         "eslint": "^8.55.0",
         "eslint-config-prettier": "^9.1.0",
         "prettier": "^3.1.1"

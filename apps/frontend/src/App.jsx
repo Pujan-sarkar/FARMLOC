@@ -15,6 +15,7 @@ import AnnouncementBar from "./components/AnnouncmentBar";
 import ColdStorage from "./pages/ColdStorage";
 import Marketplace from "./pages/Marketplace";
 import CartPage from "./pages/CartPage";
+import {ToastContainer} from "react-toastify"
 
 import Explore from "./pages/Explore";
 import BackToTop from "./components/BackToTop";
@@ -75,6 +76,7 @@ const LayoutWrapper = ({ children }) => {
 
 const App = () => {
   return (
+    <>
     <Router>
       <LayoutWrapper>
         <Routes>
@@ -92,6 +94,8 @@ const App = () => {
         </Routes>
       </LayoutWrapper>
     </Router>
+    <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
+    </>
   );
 };
 

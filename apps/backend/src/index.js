@@ -10,10 +10,14 @@ const limiter = require('./utils/rateLimiter')
 const addLogger = require('./utils/addLogger')
 const { testRoute } = require('./controllers/authController')
 const { config } = require('./configs/config')
+const cors = require('cors')
 const authRouter = require('./routes/authRoutes')
+const emailrouter = require("./routes/emailroutes")
+
 const app = express()
 require('./database/connectDB')
 
+app.use(cors({}))
 app.use(express.json())
 app.use(compression())
 
@@ -39,7 +43,8 @@ app.use((req, res, next) => {
 })
 
 app.get('/', testRoute)
-app.use('/api/auth', authRouter)
+app.use('/api/auth', authRouter);
+app.use('/api/send-email' , emailrouter)
 app.all('*', (req, res) => {
     const error = new CheckError(
         `Can't find ${req.originalUrl} on this server!`,

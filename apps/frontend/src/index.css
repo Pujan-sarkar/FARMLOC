@@ -1126,6 +1126,21 @@ body.dark .marquee-content {
   color: #000000;
 }
 
+.contact-form textarea{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
+  text-align: left;
+}
+
 .contact-form button{
   padding: 12px 30px;
   border: none;
