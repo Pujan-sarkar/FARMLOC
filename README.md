@@ -58,15 +58,15 @@ Set up **FARMLOC** locally in just a few steps! Follow these instructions to get
     
         cd apps
         cd frontend
-        npm i
-        npm dev
+        pnpm i
+        pnpm dev
 
 3. **Backend Setup:**
     
         cd apps
         cd backend
-        npm i
-        npm dev
+        pnpm i
+        pnpm dev
 
 4. **Set Up Environment Variables** (if required)    
     Copy the example environment file:
@@ -76,7 +76,7 @@ Set up **FARMLOC** locally in just a few steps! Follow these instructions to get
   Edit .env to add any necessary configurations (e.g., API keys).  
 
 5. **Start the Application:**  
-    npm start
+    pnpm dev
 
 6.  Open your browser and go to http://localhost:3000 to see FARMLOC in action! 🌐
 
