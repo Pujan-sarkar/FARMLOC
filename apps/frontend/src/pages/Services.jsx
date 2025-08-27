@@ -31,10 +31,20 @@ const Services = () => {
         <h1 className="services-heading">Our Services</h1>
         <div className="services-grid">
           {services.map((service, index) => (
-            <div className="service-card" key={index}>
-              <img src={service.image} alt={service.title} className="service-img" />
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-desc">{service.description}</p>
+            <div className="flip-card" key={index}>
+              <div className="flip-card-inner">
+                {/* Front Side */}
+                <div className="flip-card-front">
+                  <div className="card-border">
+                    <img src={service.image} alt={service.title} className="service-img" />
+                    <h3 className="service-title">{service.title}</h3>
+                  </div>
+                </div>
+                {/* Back Side */}
+                <div className="flip-card-back">
+                  <p className="service-desc">{service.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
