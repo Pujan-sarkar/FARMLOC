@@ -75,6 +75,7 @@ List all steps required to recreate the issue. Include code snippets or screensh
 - [ ] I’ve followed the [Code of Conduct](../CODE_OF_CONDUCT.md).
 - [ ] I’ve read and followed the [Contributing Guidelines](../CONTRIBUTING.md).
 - [ ] I am a participant of GSSoC (optional).
+- [ ] I am a participant of OSCI’25 (optional).
 
 ---
 

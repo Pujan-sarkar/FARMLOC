@@ -28,6 +28,7 @@ Select the type of change made in this pull request:
 - [ ] I have sent the Pull Request to the **dev** branch.
 - [ ] I have checked there are **no merge conflicts** in my PR.
 - [ ] I have ⭐ starred the FARMLOC repository.
+- [ ] I am a participant of OSCI’25 / GSSOC'25(optional).
 
 ## 🖼️ Screenshots (if UI related)
 

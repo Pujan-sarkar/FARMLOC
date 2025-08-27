@@ -9,8 +9,8 @@ import Faq from "./pages/faq";
 import Review from "./pages/Review";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
+import Contact from "./pages/contact";
 import AnnouncementBar from "./components/AnnouncmentBar";
-import Contact from "./pages/Contact ";
 import ColdStorage from "./pages/ColdStorage";
 import Marketplace from "./pages/Marketplace";
 

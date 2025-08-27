@@ -49,6 +49,7 @@ Thank you for taking the time to suggest an enhancement for **FARMLOC**! Please 
 - [ ] I have followed the [Code of Conduct](../CODE_OF_CONDUCT.md).
 - [ ] I have read and followed the [Contributing Guidelines](../CONTRIBUTING.md).
 - [ ] I am a participant of GSSoC’25 (optional).
+- [ ] I am a participant of OSCI’25 (optional).
 
 ---
 

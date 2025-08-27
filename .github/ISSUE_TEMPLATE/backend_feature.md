@@ -45,5 +45,6 @@ Thanks for contributing to FARMLOC! This template is for **backend (Node.js/Expr
 - [ ] I have reviewed the current backend structure before proposing.
 - [ ] I have read and followed the [Contribution Guidelines](../CONTRIBUTING.md).
 - [ ] I am a participant of GSSoC’25 (optional).
+- [ ] I am a participant of OSCI’25 (optional).
 
 ---

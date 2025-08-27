@@ -117,11 +117,18 @@ We thank all the amazing contributors who help make **FARMLOC** better every day
 
 ---
 
-🎉 **This project is listed in [GirlScript Summer of Code 2025](https://gssoc.girlscript.tech/)!**  
-We welcome all contributors participating via GSSoC’25. Come, collaborate, and grow with us!
-
+🎉 **This project is listed in [GirlScript Summer of Code 2025](https://gssoc.girlscript.tech)!**  
 <a href="https://gssoc.girlscript.tech/" target="_blank">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU05c_WfyHcLb3TyVuay02_ShXfYqyuBxU8A&s" alt="GSSoC'25 Logo" width="200"/>
+  <img src="https://camo.githubusercontent.com/952866a3a2679243b5bb4b8e977a2e1eebe82074271ca4baa079da59be8efa76/68747470733a2f2f747365312e6d6d2e62696e672e6e65742f74682f69642f4f49502e68374f4241737068324262314b34573943366a694c51486143533f7069643d41706926503d3026683d313830"
+    height="180" />
+</a>
+
+🎉 **This project is listed in [Open Source Connect India 2025](https://www.osconnect.org)!**
+
+<img src="https://github.com/user-attachments/assets/dc34467a-b396-43b0-a6d7-7eafd601177a"
+    height="180" />
+
+We welcome all contributors participating via GSSoC’25 & OSCI'25. Come, collaborate, and grow with us!
 </a>
 
 

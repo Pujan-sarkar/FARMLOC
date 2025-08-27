@@ -40,6 +40,7 @@ Thank you for helping us improve our documentation! Please fill out the details 
 - [ ] I’ve followed the [Code of Conduct](../CODE_OF_CONDUCT.md).
 - [ ] I’ve read and followed the [Contributing Guidelines](../CONTRIBUTING.md).
 - [ ] I am a participant of GSSoC’25 (optional).
+- [ ] I am a participant of OSCI’25 (optional).
 
 ---
 

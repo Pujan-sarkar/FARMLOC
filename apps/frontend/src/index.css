@@ -925,6 +925,95 @@ body.dark .marquee-content {
 .dot.active {
   background-color: #186c2c;
 }
+
+.contact-section{
+  position: relative;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-card{
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+  width: 100%;
+  z-index: 1;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 50%;
+  background-color: #186c2c;
+  transform: skewY(-5deg);
+  transform-origin: top left;
+  z-index: 0;
+}
+
+.contact-image img {
+  max-width: 420px;
+  width: 120%;
+}
+
+.contact-form{
+  flex: 1;
+  text-align: left;
+}
+
+.contact-form h2{
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-form p{
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.contact-form form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-form input{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.contact-form button{
+  padding: 12px 30px;
+  border: none;
+  border-radius: 20px;
+  background-color: #186c2c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover{
+  background-color: #218838;
+}
+
 body.dark {
   background-color: #1a1a1a;
   color: #e0e0e0;
@@ -948,6 +1037,22 @@ body.dark .nav-link:hover {
 
 body.dark .nav-link::after {
   background: linear-gradient(90deg, #71f66a 0%, #137f13 100%);
+}
+
+/* Dark theme for contact section */
+
+body.dark .contact-section{
+  background-color: #1a1a1a;
+}
+
+body.dark .contact-card{
+  background-color: #232b3e;
+  border: solid #3a4663;
+}
+
+
+body.dark .contact-section::before{
+  background-color: #71f66a;
 }
 
 /* Dark theme for home-container */
@@ -1139,3 +1244,4 @@ body.dark .social-icon {
   text-decoration: underline;
   color: #0e5e0e;
 }
+

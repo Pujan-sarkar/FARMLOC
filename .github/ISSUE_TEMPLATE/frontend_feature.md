@@ -45,5 +45,6 @@ Thank you for your interest in enhancing FARMLOC’s user interface or experienc
 - [ ] I have reviewed FARMLOC's current UI/UX before proposing this.
 - [ ] I have read and followed the [Contribution Guidelines](../CONTRIBUTING.md).
 - [ ] I am a participant of GSSoC’25 (optional).
+- [ ] I am a participant of OSCI’25 (optional).
 
 ---
