@@ -43,11 +43,12 @@ It is a web-based platform designed to empower farmers by providing seamless acc
     └── ...
 
 ## 🛠️ Installation & Setup
+Set up **FARMLOC** locally in just a few steps! Follow these instructions to get started. 🛠️
 
 1. **Clone the repository:**
-    
-        git clone https://github.com/your-username/FARMLOC.git
-        cd FARMLOC
+    ```bash
+      git clone https://github.com/your-username/FARMLOC.git
+      cd FARMLOC
 
    **Note:** This repository has two branches:
    - `main` - Production/stable branch
@@ -57,47 +58,151 @@ It is a web-based platform designed to empower farmers by providing seamless acc
     
         cd apps
         cd frontend
-        pnpm i
-        pnpm dev
+        npm i
+        npm dev
 
 3. **Backend Setup:**
     
         cd apps
         cd backend
-        pnpm i
-        pnpm dev
+        npm i
+        npm dev
+
+4. **Set Up Environment Variables** (if required)    
+    Copy the example environment file:
+    ```bash
+    cp .env.example .env
+
+  Edit .env to add any necessary configurations (e.g., API keys).  
+
+5. **Start the Application:**  
+    npm start
+
+6.  Open your browser and go to http://localhost:3000 to see FARMLOC in action! 🌐
 
 ## 🤝 Contributing
 
 When contributing to this project:
-- Create your feature branch from `dev`
-- Make your changes
-- **Push all pull requests to the `dev` branch**
-- Ensure your code follows the project's coding standards
-- Test your changes before submitting
 
-## 📝 Development Workflow
+Step 1: Find or Create an Issue 🔍
+Browse Existing Issues:
 
-    # 1. Switch to dev branch
-    git checkout dev
+Visit FARMLOC Issues.
+Look for tasks labeled good first issue or beginner-friendly.
+Comment to claim it: “I’d like to work on this!” 🙋‍♂️
 
-    # 2. Pull latest changes from dev
-    git pull origin dev
 
-    # 3. Create a new feature branch
-    git checkout -b feature/your-feature-name
+Create a New Issue:
 
-    # --- Make your changes in the codebase now ---
+Click “New issue” on the issues page.
+Use a clear title, e.g., “Add Missing Installation Steps to README”.
+Write a description including:
 
-    # 4. Stage and commit your changes
-    git add .
-    git commit -m "Add your commit message"
+What needs to be done (e.g., add a feature or fix a typo).
+Why it’s needed (e.g., improves usability).
+Acceptance Criteria (e.g., what makes the task complete).
 
-    # 5. Push to your feature branch
-    git push origin feature/your-feature-name
 
-    # 6. Create a Pull Request
-    # (Use the GitHub/GitLab/Bitbucket web UI to open a PR from feature/your-feature-name to dev)
+Add labels like documentation, enhancement, or good first issue.
+Submit and wait for maintainer feedback or assignment.
+
+Step 2: Set Up Your Fork 🍴
+
+Fork the Repository:
+
+Go to FARMLOC and click “Fork” (top-right) to create your own copy.
+Clone Your Fork:
+    ```bash
+    git clone https://github.com/YOUR-USERNAME/FARMLOC.git
+
+(Replace YOUR-USERNAME with your GitHub username.)
+
+Navigate to the Folder:
+    ```bash
+    cd FARMLOC
+
+Add Upstream Remote (to stay updated with the original repo):
+    ```bash
+    git remote add upstream https://github.com/Pujan-sarkar/FARMLOC.git
+
+**Verify**: git remote -v.
+
+
+Step 3: Make Changes ✍️
+
+Create a Branch:
+    ```bash
+    git checkout -b issue-123-update-readme
+
+(Name it after the issue, e.g., issue-123-add-feature.)
+
+Edit Files:
+
+Open the project in your editor (e.g., VS Code: code .).
+Example: Update README.md or fix a bug in the code.
+Test locally: npm start to ensure it works.
+
+
+Stage and Commit:
+
+Check changes: git status.
+Stage files: git add README.md (or git add . for all).
+
+Commit with a clear message:
+git commit -m "Update README with installation steps. Fixes # <issue number>"
+
+Step 4: Push Changes 🚀
+
+Push your branch to your fork:
+    ```bash
+    git push origin issue-123-update-readme
+
+Step 5: Create a Pull Request (PR) 📬
+
+Open the PR:
+
+Go to your fork: https://github.com/YOUR-USERNAME/FARMLOC.
+Click “Compare & pull request” (appears after pushing).
+Or visit FARMLOC Pull Requests, click “New pull request”, and select your branch.
+
+
+Fill Out the PR Form:
+
+Title: E.g., “Add Installation Steps to README #123”.
+Description: Summarize changes, reference the issue (“Closes #123”), and include screenshots if applicable.
+Check “Allow edits from maintainers” for collaboration.
+
+
+Submit and Respond:
+
+Submit the PR.
+Reply to reviewer comments and make requested changes (edit files, commit, push again).
+
+
+
+Step 6: After the PR is Merged 🎉
+
+Sync Your Fork:
+    ```bash
+    git fetch upstream
+    git checkout main
+    git merge upstream/main
+    git push origin main
+
+Clean Up:
+
+Delete the branch locally: git branch -d issue-123-update-readme.
+Delete on GitHub: Via the PR page after merge.
+
+
+Celebrate your contribution to FARMLOC! 🌟
+**Contribution Tips**💡
+
+Test Changes: Run npm start to verify locally.
+Keep PRs Small: Focus on one issue per PR.
+Ask Questions: Comment on the issue/PR or contact maintainers.
+Follow Guidelines: Check for a CONTRIBUTING.md file in the repo.
+
 
 ## 🚦 Getting Started
 
@@ -107,7 +212,12 @@ When contributing to this project:
 4. Navigate to the frontend URL (typically `http://localhost:3000`)  
 5. Begin exploring FARMLOC features!
 
-## 🙌 Our Contributors
+📜 **License**
+FARMLOC is licensed under the MIT License. See the LICENSE file for details. 📄
+
+
+
+## 🙌 **Our Contributors**
 
 We thank all the amazing contributors who help make **FARMLOC** better every day! 🌾💚
 
