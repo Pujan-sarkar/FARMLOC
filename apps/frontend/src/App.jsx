@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -25,7 +25,18 @@ const sectionMap = {
 
 const FullLandingPage = () => {
   const location = useLocation();
+  const [showButton, setShowButton] = useState(false);
 
+  // Handle scroll to show/hide Back to Top button
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Handle smooth scrolling to section based on route
   useEffect(() => {
     const sectionId = sectionMap[location.pathname];
     if (sectionId) {
@@ -35,6 +46,11 @@ const FullLandingPage = () => {
       }
     }
   }, [location.pathname]);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -46,7 +62,15 @@ const FullLandingPage = () => {
       <Faq />
       <Review />
       <Contact />
-      {/* Add other components similarly */}
+      {showButton && (
+        <button
+          className="back-to-top"
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          🔝
+        </button>
+      )}
     </>
   );
 };
@@ -78,7 +102,7 @@ const App = () => {
           <Route path="/review" element={<FullLandingPage />} />
           <Route path="/contact" element={<FullLandingPage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path signup /> 
         </Routes>
       </LayoutWrapper>
     </Router>

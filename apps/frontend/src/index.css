@@ -37,6 +37,28 @@ html {
   letter-spacing: 1px;
 }
 
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2ecc71; /* Green to match FARMLOC theme */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
 .custom-navbar {
   background: rgba(255, 255, 255, 0.379) !important;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 0 8px 2px #71f66a33 !important;
@@ -114,6 +136,8 @@ html {
     color: #71f66a !important;
   }
 }
+
+
 
 /* Home Section */
 .home-section {
