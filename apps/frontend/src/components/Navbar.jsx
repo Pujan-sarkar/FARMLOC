@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiMenu, BiMoon, BiSun } from "react-icons/bi";
 import { FaLeaf } from "react-icons/fa";
 import { Container, Navbar as BsNavbar, Nav, Button, NavDropdown } from 'react-bootstrap';
+import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 
 const navLinks = [
   { path: "/", section: "home", display: "Home" },
@@ -15,21 +17,9 @@ const navLinks = [
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [theme, setTheme] = useState("light");
+  const { user, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const [expanded, setExpanded] = useState(false);
-
-  // Apply theme class to body when theme changes
-  useEffect(() => {
-    if (theme === "dark") {
-      document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
-  };
 
   const handleNavClick = (path, section) => {
     setExpanded(false);
@@ -77,20 +67,50 @@ const Navbar = () => {
           </Nav>
           
           <div className="d-flex align-items-center gap-3">
+            {user ? (
+              <>
+                <Button 
+                  variant="outline-success" 
+                  as={Link} 
+                  to="/dashboard" 
+                  className="rounded-pill px-3 fw-semibold"
+                >
+                  Dashboard
+                </Button>
+                <Button 
+                  variant="danger" 
+                  onClick={logout}
+                  className="rounded-pill px-3 fw-semibold"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button 
+                variant="success" 
+                as={Link} 
+                to="/login" 
+                className="rounded-pill px-3 fw-semibold"
+              >
+                Login
+              </Button>
+            )}
             <Button 
-              variant="success" 
-              as={Link} 
-              to="/login" 
-              className="rounded-pill px-3 fw-semibold"
-            >
-              Login
-            </Button>
-            <Button 
-              variant="link" 
+              variant="outline-secondary" 
               onClick={toggleTheme} 
-              className="theme-btn p-0 text-dark"
+              className="theme-btn rounded-circle p-2"
+              style={{
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: '1px solid #6c757d',
+                backgroundColor: 'transparent'
+              }}
+              title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             >
-              {theme === "light" ? <BiMoon className="fs-4" /> : <BiSun className="fs-4" />}
+              {theme === "light" ? <BiMoon className="fs-5" /> : <BiSun className="fs-5" />}
             </Button>
           </div>
         </BsNavbar.Collapse>

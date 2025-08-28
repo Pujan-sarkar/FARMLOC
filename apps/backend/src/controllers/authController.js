@@ -91,4 +91,76 @@ const register = catchError(async (req, res) => {
     }
 })
 
-module.exports = { testRoute, login, register }
+const updateProfile = catchError(async (req, res) => {
+    try {
+        const { name, currentPassword, newPassword } = req.body
+        const userId = req.userId // This will come from JWT token
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: 'User not authenticated'
+            })
+        }
+
+        const user = await UserModel.findById(userId)
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found'
+            })
+        }
+
+        // Verify current password
+        const isPasswordMatch = await bcrypt.compare(currentPassword, user.password)
+        if (!isPasswordMatch) {
+            return res.status(401).json({
+                success: false,
+                message: 'Current password is incorrect'
+            })
+        }
+
+        // Update name if provided
+        if (name && name.trim()) {
+            user.name = name.trim()
+        }
+
+        // Update password if provided
+        if (newPassword && newPassword.trim()) {
+            if (newPassword.length < 6) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'New password must be at least 6 characters long'
+                })
+            }
+            user.password = newPassword
+            user.cpassword = newPassword
+        }
+
+        await user.save()
+
+        // Return updated user data (without password)
+        const updatedUser = {
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            createdAt: user.createdAt,
+            updatedAt: user.updatedAt
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: 'Profile updated successfully',
+            data: updatedUser
+        })
+
+    } catch (error) {
+        console.error('Profile update error:', error)
+        return res.status(500).json({
+            success: false,
+            message: 'Profile update failed'
+        })
+    }
+})
+
+module.exports = { testRoute, login, register, updateProfile }

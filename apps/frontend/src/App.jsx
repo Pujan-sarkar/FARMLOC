@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -13,6 +15,7 @@ import Contact from "./pages/contact";
 import AnnouncementBar from "./components/AnnouncmentBar";
 import ColdStorage from "./pages/ColdStorage";
 import Marketplace from "./pages/Marketplace";
+import UserDashboard from "./pages/UserDashboard";
 
 const sectionMap = {
   "/": "home",
@@ -68,20 +71,25 @@ const LayoutWrapper = ({ children }) => {
 
 const App = () => {
   return (
-    <Router>
-      <LayoutWrapper>
-        <Routes>
-          <Route path="/" element={<FullLandingPage />} />
-          <Route path="/about" element={<FullLandingPage />} />
-          <Route path="/cold-storage" element={<FullLandingPage />} />
-          <Route path="/market" element={<FullLandingPage />} />
-          <Route path="/review" element={<FullLandingPage />} />
-          <Route path="/contact" element={<FullLandingPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </LayoutWrapper>
-    </Router>
+    <ThemeProvider>
+      <AuthProvider>
+        <Router>
+          <LayoutWrapper>
+            <Routes>
+              <Route path="/" element={<FullLandingPage />} />
+              <Route path="/about" element={<FullLandingPage />} />
+              <Route path="/cold-storage" element={<FullLandingPage />} />
+              <Route path="/market" element={<FullLandingPage />} />
+              <Route path="/review" element={<FullLandingPage />} />
+              <Route path="/contact" element={<FullLandingPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/dashboard" element={<UserDashboard />} />
+            </Routes>
+          </LayoutWrapper>
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
   );
 };
 

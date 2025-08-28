@@ -4,6 +4,7 @@ const compression = require('compression')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
+const cors = require('cors')
 const CheckError = require('./utils/checkError')
 const limiter = require('./utils/rateLimiter')
 const addLogger = require('./utils/addLogger')
@@ -12,6 +13,12 @@ const { config } = require('./configs/config')
 const authRouter = require('./routes/authRoutes')
 const app = express()
 require('./database/connectDB')
+
+// CORS configuration
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:5173'], // Add your frontend URLs
+  credentials: true
+}))
 
 app.use(express.json())
 app.use(compression())

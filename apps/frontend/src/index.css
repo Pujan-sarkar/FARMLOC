@@ -23,6 +23,42 @@ body.dark {
   color: #e0e0e0;
 }
 
+/* Dark theme navbar styles */
+body.dark .custom-navbar {
+  background: rgba(26, 26, 26, 0.9) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), 0 0 8px 2px rgba(113, 246, 106, 0.2) !important;
+  border: 1.5px solid rgba(113, 246, 106, 0.3) !important;
+}
+
+body.dark .nav-link-custom {
+  color: #e0e0e0 !important;
+}
+
+body.dark .nav-link-custom:hover,
+body.dark .nav-link-custom:focus {
+  background: rgba(113, 246, 106, 0.25) !important;
+  color: #71f66a !important;
+}
+
+/* Dark theme for dashboard */
+body.dark .dashboard-container {
+  background-color: #1a1a1a !important;
+}
+
+body.dark .dashboard-card {
+  background-color: #2d2d2d !important;
+  border-color: #404040 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark .dashboard-card h3 {
+  color: #71f66a !important;
+}
+
+body.dark .dashboard-card p {
+  color: #b0b0b0 !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -129,6 +165,7 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 50px;
+  position: relative;
 }
 
 .hero-text {
