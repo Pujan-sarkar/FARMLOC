@@ -12,7 +12,6 @@ import {
   FaChartLine
 } from 'react-icons/fa';
 
-
 const announcements = [
   <>
     <FaCloudRain style={{ verticalAlign: 'middle', marginRight: 6, color: '#4A90E2' }} />
@@ -44,7 +43,7 @@ const announcements = [
   </>,
   <>
     <FaUserShield style={{ verticalAlign: 'middle', marginRight: 6, color: '#007BFF' }} />
-"Safety Alert: Advanced drone surveillance deployed to monitor agricultural zones."
+    Safety Alert: Advanced drone surveillance deployed to monitor agricultural zones.
   </>,
   <>
     <FaMoneyBillWave style={{ verticalAlign: 'middle', marginRight: 6, color: '#FFC107' }} />
@@ -58,15 +57,43 @@ const announcements = [
 
 const AnnouncementBar = () => {
   return (
-    <div className="announcement-bar">
-      <div className="marquee">
-        <span className="marquee-content">
-          {announcements.map((msg, index) => (
-            <span key={index} className="announcement-msg">
-              {msg} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            </span>
-          ))}
-        </span>
+    <div
+      className="announcement-bar border-bottom"
+      style={{
+        backgroundColor: "#f9f9f9",
+        minHeight: "40px",
+        display: "flex",
+        alignItems: "center",
+        overflow: "hidden",
+        padding: "0 1rem",
+        fontSize: "0.95rem",
+        fontWeight: 500,
+        whiteSpace: "nowrap",
+        width: "100%",         
+        maxWidth: "1800px",     
+        margin: "0 auto",      
+        borderRadius: "8px"    
+      }}
+    >
+      <div
+        className="marquee"
+        style={{
+          display: "inline-block",
+          animation: "marquee 25s linear infinite"
+        }}
+      >
+        {announcements.map((msg, index) => (
+          <span
+            key={index}
+            style={{
+              display: "inline-block",
+              color: "#333",
+              marginRight: "2rem"
+            }}
+          >
+            {msg} | 
+          </span>
+        ))}
       </div>
     </div>
   );

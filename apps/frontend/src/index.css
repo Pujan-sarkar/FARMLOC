@@ -11,6 +11,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -1210,4 +1211,17 @@ body.dark .social-icon {
   text-decoration: none;
   transition: background 0.3s ease;
   border: 1px solid white;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Make AnnouncementBar full width on small screens */
+@media (max-width: 1008px) {
+  .announcement-bar {
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
 }
