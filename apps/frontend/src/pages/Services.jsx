@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from '../context/ThemeContext';
 import '../index.css';
 
 // Importing service images
@@ -25,8 +26,17 @@ const services = [
 ];
 
 const Services = () => {
+  const { theme, toggleTheme } = useTheme();
+  
   return (
     <section className="services-section">
+      <button 
+        className="theme-toggle-btn"
+        onClick={toggleTheme}
+        title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+      >
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
       <div className="services-container">
         <h1 className="services-heading">Our Services</h1>
         <div className="services-grid">

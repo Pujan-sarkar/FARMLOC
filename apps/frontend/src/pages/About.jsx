@@ -3,11 +3,21 @@ import React from 'react';
 import aboutImg from '../assets/images/about1.png';
 import aboutCardImg from "../assets/images/about2..png";
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 import '../index.css';
 
 const About = () => {
+    const { theme, toggleTheme } = useTheme();
+    
     return (
         <section id="about" className="about-section">
+            <button 
+                className="theme-toggle-btn"
+                onClick={toggleTheme}
+                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+            >
+                {theme === 'light' ? '🌙' : '☀️'}
+            </button>
             <div className="about-container">
                 <div className="about-content">
 

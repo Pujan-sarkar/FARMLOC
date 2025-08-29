@@ -9,6 +9,7 @@ import {
   FaStar,
   FaMapMarkerAlt 
 } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 import product1 from "../assets/images/tomatoes.jpg";
 import product2 from "../assets/images/potatoes.jpeg";
@@ -16,6 +17,7 @@ import product3 from "../assets/images/dairy.jpeg";
 import './Marketplace.css';
 
 const Marketplace = () => {
+  const { theme, toggleTheme } = useTheme();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [cartItems, setCartItems] = useState([]);
@@ -68,6 +70,13 @@ const Marketplace = () => {
 
   return (
     <section className="marketplace-section" id='market'>
+      <button 
+        className="theme-toggle-btn"
+        onClick={toggleTheme}
+        title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
+      >
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
       <div className="marketplace-container">
         {/* Header */}
         <div className="marketplace-header">

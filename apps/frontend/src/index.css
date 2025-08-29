@@ -1211,3 +1211,222 @@ body.dark .social-icon {
   transition: background 0.3s ease;
   border: 1px solid white;
 }
+
+/* Theme toggle button styles */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(113, 246, 106, 0.1);
+  border: 2px solid rgba(113, 246, 106, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(113, 246, 106, 0.2);
+  border-color: rgba(113, 246, 106, 0.5);
+  transform: scale(1.1);
+}
+
+/* Dark theme for auth components */
+body.dark .auth-container {
+  background: #1a1a1a;
+}
+
+body.dark .auth-right {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  box-shadow: 0 0 15px rgba(113, 246, 106, 0.1);
+  border: 1px solid rgba(113, 246, 106, 0.2);
+}
+
+body.dark .auth-right h2 {
+  color: #e0e0e0;
+}
+
+body.dark .auth-form label {
+  color: #e0e0e0;
+}
+
+body.dark .auth-form input {
+  background-color: #404040;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+body.dark .auth-form input:focus {
+  border-color: #71f66a;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(113, 246, 106, 0.2);
+}
+
+body.dark .auth-form input::placeholder {
+  color: #999;
+}
+
+body.dark .auth-form button {
+  background-color: #71f66a;
+  color: #1a1a1a;
+}
+
+body.dark .auth-form button:hover {
+  background-color: #52a352;
+}
+
+body.dark .auth-right p {
+  color: #e0e0e0;
+}
+
+body.dark .auth-right p a {
+  color: #71f66a;
+}
+
+body.dark .highlight {
+  color: #71f66a;
+}
+
+body.dark .error-message {
+  color: #ff6b6b !important;
+}
+
+/* Dark theme for Marketplace */
+body.dark .marketplace-section {
+  background-color: #1a1a1a;
+}
+
+body.dark .marketplace-container {
+  background-color: #1a1a1a;
+}
+
+body.dark .marketplace-header h1 {
+  color: #71f66a;
+}
+
+body.dark .marketplace-header p {
+  color: #e0e0e0;
+}
+
+body.dark .search-box input {
+  background-color: #404040;
+  border-color: #555;
+  color: #e0e0e0;
+}
+
+body.dark .search-box input:focus {
+  border-color: #71f66a;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(113, 246, 106, 0.2);
+}
+
+body.dark .search-box input::placeholder {
+  color: #999;
+}
+
+body.dark .category-filters button {
+  background-color: #404040;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+body.dark .category-filters button:hover {
+  background-color: #555;
+}
+
+body.dark .category-filters button.active {
+  background-color: #71f66a;
+  color: #1a1a1a;
+}
+
+body.dark .product-card {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+body.dark .product-card h3 {
+  color: #71f66a;
+}
+
+body.dark .product-card .farmer {
+  color: #b0b0b0;
+}
+
+body.dark .product-card .price {
+  color: #71f66a;
+}
+
+body.dark .product-card .storage {
+  color: #b0b0b0;
+}
+
+body.dark .product-card .harvest-date {
+  color: #999;
+}
+
+body.dark .add-to-cart {
+  background-color: #71f66a;
+  color: #1a1a1a;
+}
+
+body.dark .add-to-cart:hover {
+  background-color: #52a352;
+}
+
+body.dark .cart-button {
+  background-color: #71f66a;
+  color: #1a1a1a;
+}
+
+body.dark .cart-button:hover {
+  background-color: #52a352;
+}
+
+/* Dark theme for Services page */
+body.dark .services-section {
+  background-color: #1a1a1a;
+}
+
+body.dark .services-container {
+  background-color: #1a1a1a;
+}
+
+body.dark .services-heading {
+  color: #71f66a;
+}
+
+/* Dark theme for About page */
+body.dark .about-section {
+  background-color: #1a1a1a;
+}
+
+body.dark .about-container {
+  background-color: #1a1a1a;
+}
+
+body.dark .about-text h2 {
+  color: #71f66a;
+}
+
+body.dark .about-text p {
+  color: #e0e0e0;
+}
+
+body.dark .about-text strong {
+  color: #71f66a;
+}
+
+body.dark .about-btn {
+  background-color: #71f66a;
+  color: #1a1a1a;
+}
+
+body.dark .about-btn:hover {
+  background-color: #52a352;
+}
