@@ -1,8 +1,4 @@
 // Login.jsx
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -83,14 +79,31 @@ const Login = () => {
       </div>
       <div className="auth-right">
         <h2>Welcome <span className="highlight">Back</span></h2>
-        <form className="auth-form">
+        {error && <div className="error-message" style={{color: 'red', marginBottom: '10px'}}>{error}</div>}
+        <form className="auth-form" onSubmit={handleSubmit}>
           <label>Email Address</label>
-          <input type="email" placeholder="Enter email" required />
+          <input 
+            type="email" 
+            name="email"
+            placeholder="Enter email" 
+            value={formData.email}
+            onChange={handleChange}
+            required 
+          />
 
           <label>Password</label>
-          <input type="password" placeholder="Enter password" required />
+          <input 
+            type="password" 
+            name="password"
+            placeholder="Enter password" 
+            value={formData.password}
+            onChange={handleChange}
+            required 
+          />
 
-          <button type="submit" className="submit-button">Log In</button>
+          <button type="submit" className="submit-button" disabled={loading}>
+            {loading ? 'Logging In...' : 'Log In'}
+          </button>
         </form>
         <p>
           Don't have an account? <Link to="/signup" className="link">Sign Up</Link>
