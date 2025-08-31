@@ -17,12 +17,24 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [theme, setTheme] = useState("light");
   const [expanded, setExpanded] = useState(false);
+  const ls = localStorage;
 
+  useEffect(() => {
+    // On load check theme
+    const savedTheme = ls.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme("light");
+    }
+  }, []);
   // Apply theme class to body when theme changes
   useEffect(() => {
     if (theme === "dark") {
+      ls.setItem("theme", "dark");
       document.body.classList.add("dark");
     } else {
+      ls.setItem("theme", "dark");
       document.body.classList.remove("dark");
     }
   }, [theme]);
@@ -34,13 +46,13 @@ const Navbar = () => {
   const handleNavClick = (path, section) => {
     setExpanded(false);
     if (section && path === window.location.pathname) {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        navigate(path);
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      navigate(path);
+    }
   };
 
   return (
