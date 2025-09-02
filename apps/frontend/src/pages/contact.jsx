@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import '../index.css';
 import contactImage from '../assets/images/contactimage.png';
 import { contactFormSchema } from '../schemas/contactform';
-import  { zodResolver } from '@hookform/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -15,31 +15,31 @@ const Contact = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    try{
+    try {
       setLoading(true);
-      axios.post(`${BACKEND_URI}/api/send-email` , data)
-      .then((res)=>{ 
-        setLoading(false);
-        toast.success("Message sent successfully!")
-        form.current.reset();
-      })
-      .catch((err)=>{
-        setLoading(false);
-        toast.error("Failed to send message. Please try again later.")
-      })
+      axios.post(`${BACKEND_URI}/api/send-email`, data)
+        .then((res) => {
+          setLoading(false);
+          toast.success("Message sent successfully!")
+          form.current.reset();
+        })
+        .catch((err) => {
+          setLoading(false);
+          toast.error("Failed to send message. Please try again later.")
+        })
 
-    }catch(err){
+    } catch (err) {
       toast.error("Failed to send message. Please try again later.")
     }
   };
 
-  const {register, handleSubmit , formState : {errors}} = useForm({
-    resolver : zodResolver(contactFormSchema),
-    mode : "onChange",
-    defaultValues : {
-      email : "",
-      name : "",
-      message : ""
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(contactFormSchema),
+    mode: "onChange",
+    defaultValues: {
+      email: "",
+      name: "",
+      message: ""
     }
   });
 
@@ -58,29 +58,35 @@ const Contact = () => {
             you as soon as possible.
           </p>
 
-          <form onSubmit={handleSubmit(onSubmit)} ref={form}>
-            <input
-              placeholder="Enter a Valid Email address"
-              required
-              {...register("email")}
-            />
-            {
-              errors.email && <span className='error-message'>{errors.email.message}</span>
-            }
-            <input type="text" placeholder="Enter your Name" required {...register("name")} />
-            {
-              errors.name && <span className='error-message'>{errors.name.message}</span>
-            }
+          <form onSubmit={handleSubmit(onSubmit)} ref={form} className='form'>
+            <div className='input-field'>
+              <input
+                placeholder="Enter a Valid Email address"
+                
+                {...register("email")}
+              />
+              {
+                errors.email && <span className='error-message'>{errors.email.message}</span>
+              }
+            </div>
+            <div className='input-field'>
+              <input type="text" placeholder="Enter your Name" {...register("name")} />
+              {
+                errors.name && <span className='error-message'>{errors.name.message}</span>
+              }
+            </div>
 
-            <textarea
-              placeholder="Write your message here..."
-              required
-              {...register("message")}
-            ></textarea>
-            {
-              errors.message && <span className='error-message'>{errors.message.message}</span>
-            }
+            <div className='input-field'>
+              <textarea
+                placeholder="Write your message here..."
 
+                {...register("message")}
+              ></textarea>
+              {
+                errors.message && <span className='error-message'>{errors.message.message}</span>
+              }
+
+            </div>
             <button type="submit" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
             </button>

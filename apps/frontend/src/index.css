@@ -1135,7 +1135,15 @@ body.dark .marquee-content {
   color: #000000;
 }
 
+.input-field{
+  position: relative;
+  height: auto;
+}
+
 .error-message {
+  display: block;
+  left: 0px;
+  bottom: 0px;
   color: red;
   font-size: 15px;
   text-align: left;
