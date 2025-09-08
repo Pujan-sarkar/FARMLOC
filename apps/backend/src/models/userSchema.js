@@ -1,55 +1,26 @@
-const { Schema, model } = require('mongoose')
-const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const config = require('../configs/config')
 
-const userSchema = new Schema(
-    {
-        name: {
-            type: String,
-            required: true,
-        },
-        email: {
-            type: String,
-            required: true,
-            unique: true,
-        },
-        password: {
-            type: String,
-            required: true,
-        },
-        cpassword: {
-            type: String,
-            required: true,
-        },
-    },
-    { timestamps: true }
-)
-
-userSchema.pre('save', async function (next) {
-    const user = this
-
-    if (!user.isModified('password') && !user.isModified('cpassword')) {
-        return next()
-    }
-
+const protect = (req, res, next) => {
     try {
-        const salt = await bcrypt.genSalt(10)
-
-        if (user.isModified('password')) {
-            const hashedPassword = await bcrypt.hash(user.password, salt)
-            user.password = hashedPassword
+        const token = req.headers.authorization?.split(' ')[1]
+        if (!token) {
+            return res.status(401).json({
+                success: false,
+                message: 'Unauthorized: No token provided',
+            })
         }
 
-        if (user.isModified('cpassword')) {
-            const hashedCPassword = await bcrypt.hash(user.cpassword, salt)
-            user.cpassword = hashedCPassword
-        }
-
-        return next()
+        const decoded = jwt.verify(token, config.JWT_SECRET)
+        req.userId = decoded.userId
+        next()
     } catch (error) {
-        return next(error)
+        console.error('Authentication error:', error)
+        return res.status(401).json({
+            success: false,
+            message: 'Unauthorized: Invalid token',
+        })
     }
-})
+}
 
-const UserModel = model('users', userSchema)
-
-module.exports = UserModel
+module.exports = protect

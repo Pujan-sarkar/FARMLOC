@@ -1,6 +1,8 @@
 const express = require('express')
 const cookie = require('cookie-parser')
 const compression = require('compression')
+const dotenv = require('dotenv')
+const cors = require('cors')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
@@ -12,6 +14,17 @@ const { config } = require('./configs/config')
 const authRouter = require('./routes/authRoutes')
 const app = express()
 require('./database/connectDB')
+
+dotenv.config()
+
+app.use(cors({
+    origin: [
+        "http://localhost:5173",  
+        "https://farmlocweb.vercel.app" 
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}))
 
 app.use(express.json())
 app.use(compression())
@@ -29,7 +42,8 @@ app.use((req, res, next) => {
 })
 
 app.get('/', testRoute)
-app.use('/api/auth', authRouter)
+app.use('/auth', authRouter)
+
 app.all('*', (req, res) => {
     const error = new CheckError(
         `Can't find ${req.originalUrl} on this server!`,
