@@ -390,7 +390,7 @@ body.dark .marquee-content {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* 👇 Align button with image by stretching .about-text to match height */
+/*  Align button with image by stretching .about-text to match height */
 .about-text {
     max-width: 600px;
     display: flex;
@@ -1053,93 +1053,98 @@ body.dark .marquee-content {
   background-color: #186c2c;
 }
 
-.contact-section{
-  position: relative;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  padding: 6rem 2rem;
-  background-color: #ffffff;
+/* Contact Section Base */
+.contact-section {
   display: flex;
   justify-content: center;
-  overflow: hidden;
-}
-
-.contact-card{
-  background-color: #ffffff;
-  border-radius: 10px;
-  display: flex;
   align-items: center;
-  gap: 2rem;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 900px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 2rem;
+  max-width: 1100px;
   width: 100%;
-  z-index: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -5%;
-  width: 110%;
-  height: 50%;
-  background-color: #186c2c;
-  transform: skewY(-5deg);
-  transform-origin: top left;
-  z-index: 0;
-}
-
+/* Contact image styling */
 .contact-image img {
-  max-width: 420px;
-  width: 120%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.contact-form{
+/* Contact form styling */
+.contact-form {
   flex: 1;
-  text-align: left;
 }
 
-.contact-form h2{
-  font-size: 32px;
-  margin-bottom: 10px;
+.contact-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
-.contact-form p{
-  font-size: 16px;
-  margin-bottom: 30px;
+.contact-form p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: #444;
 }
 
-.contact-form form{
+.contact-form form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  gap: 1rem;
 }
 
-.contact-form input{
-  padding: 12px 20px;
-  border: none;
-  border-radius: 20px;
-  width: 300px;
-  background-color: #f0f0f0;
-  color: #000000;
+.contact-form input,
+.contact-form button {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-.contact-form button{
-  padding: 12px 30px;
-  border: none;
-  border-radius: 20px;
-  background-color: #186c2c;
+.contact-form button {
+  background-color: #4caf50;
   color: white;
-  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s ease;
 }
 
-.contact-form button:hover{
-  background-color: #218838;
+.contact-form button:hover {
+  background-color: #45a049;
 }
+
+/* Success Message */
+.success-msg {
+  color: green;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form button {
+    width: 100%;
+  }
+}
+/* Dark Theme Styles */
 
 body.dark {
   background-color: #1a1a1a;
@@ -1177,6 +1182,10 @@ body.dark .contact-card{
   border: solid #3a4663;
 }
 
+body.dark .contact-form p {
+  color: #fff;   /* White text */
+}
+
 
 body.dark .contact-section::before{
   background-color: #71f66a;
@@ -1200,6 +1209,7 @@ body.dark .hero-text p,
 body.dark .stats p {
   color: #cfd8dc;
 }
+
 
 body.dark .explore-btn {
   background: #71f66a;

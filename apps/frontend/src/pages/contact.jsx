@@ -3,7 +3,7 @@ import '../index.css';
 import contactImage from '../assets/images/contactimage.png' ;
 import { useState,useRef } from "react"
 
-const contact = () => {
+const Contact = () => {
 
   const [loading, setLoading] = useState(false);
   const form = useRef()
@@ -28,17 +28,17 @@ const contact = () => {
       <img src={contactImage} alt='contact illustration'/>
       </div>
         <div className="contact-form">
-            <h2>Get in touch</h2>
+            <h2>Get in Touch</h2>
             <p>Have any questions, feedback, or suggestions? We'd love to hear from you! <br/> Fill out the form below and our team will get back to you as soon as possible.</p>
             <form onSubmit={handleSubmit}>
-                <input type='email' placeholder='Enter a Valid Email adress' required></input>
+                <input type='email' placeholder='Enter a valid email address' required></input>
                 <input type='text' placeholder='Enter your Name' required></input>
                 <button
                 type="submit"
                 disabled={loading}>
                 {loading ? 'Sending...' : 'Send Message'}
                 </button>
-                {success && <p>Message sent Successfully!</p>}
+                {success && <p>Message Sent Successfully!</p>}
             </form>
         </div>
 
@@ -50,4 +50,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact;
