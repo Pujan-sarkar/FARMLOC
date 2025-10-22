@@ -14,6 +14,7 @@ import Contact from "./pages/contact";
 import AnnouncementBar from "./components/AnnouncmentBar";
 import ColdStorage from "./pages/ColdStorage";
 import Marketplace from "./pages/Marketplace";
+import CartPage from "./pages/CartPage";
 
 import Explore from "./pages/Explore";
 import BackToTop from "./components/BackToTop";
@@ -87,6 +88,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </LayoutWrapper>
     </Router>

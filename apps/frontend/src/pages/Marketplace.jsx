@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { 
   FaSearch, 
   FaFilter, 
@@ -14,11 +14,12 @@ import product1 from "../assets/images/tomatoes.jpg";
 import product2 from "../assets/images/potatoes.jpeg";
 import product3 from "../assets/images/dairy.jpeg";
 import './Marketplace.css';
+import { CartContext } from "../context/CartContext";
 
 const Marketplace = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
-  const [cartItems, setCartItems] = useState([]);
+  const { addToCart, cartItems } = useContext(CartContext);
 
   // Sample product data
   const products = [
@@ -26,7 +27,7 @@ const Marketplace = () => {
       id: 1,
       name: "Organic Tomatoes",
       farmer: "Rajesh Farms",
-      price: "₹45/kg",
+      price: 45,
       storage: "GreenCold Storage (5km)",
       rating: 4.5,
       image: product1,
@@ -37,7 +38,7 @@ const Marketplace = () => {
       id: 2,
       name: "Fresh Potatoes",
       farmer: "Singh Agri",
-      price: "₹30/kg",
+      price: 30,
       storage: "AgriFresh (12km)",
       rating: 4.2,
       image: product2,
@@ -48,7 +49,7 @@ const Marketplace = () => {
       id: 3,
       name: "Buffalo Milk",
       farmer: "Dairy Bliss",
-      price: "₹60/liter",
+      price: 60,
       storage: "ChillZone (8km)",
       rating: 4.7,
       image: product3,
@@ -61,10 +62,6 @@ const Marketplace = () => {
     product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
     (activeCategory === 'all' || product.category === activeCategory)
   );
-
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
 
   return (
     <section className="marketplace-section" id='market'>
@@ -102,7 +99,7 @@ const Marketplace = () => {
             </button>
             <button 
               className={activeCategory === 'dairy' ? 'active' : ''}
-              onClick={() => setCartItems('dairy')}
+              onClick={() => setActiveCategory('dairy')}
             >
               <FaTruck /> Dairy
             </button>
@@ -127,7 +124,7 @@ const Marketplace = () => {
                   <h3>{product.name}</h3>
                   <p className="farmer">By {product.farmer}</p>
                   <div className="product-meta">
-                    <span className="price">{product.price}</span>
+                    <span className="price">₹{product.price}/unit</span>
                     <span className="storage">{product.storage}</span>
                   </div>
                   <p className="harvest-date">Harvested: {product.harvestDate}</p>
