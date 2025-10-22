@@ -39,3 +39,8 @@
     margin-bottom: 20px;
   }
 }
+
+#map{
+  height: 100%;
+  width: 100%;
+}

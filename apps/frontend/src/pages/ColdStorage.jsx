@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Container, Row, Col, Form, Card, Button, InputGroup } from 'react-bootstrap';
 import { FaSearch, FaMapMarkerAlt, FaPhone, FaStar, FaFilter } from 'react-icons/fa';
 import './ColdStorage.css';
 import img from "../assets/images/map-placeholder.jpg";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 const ColdStorage = () => {
+   useEffect(() => {
+    const map = L.map("map").setView([18.5204, 73.8567], 5);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+    }).addTo(map);
+
+
+      L.marker([18.5204, 73.8567]).addTo(map)
+  .bindPopup("Pune, Maharashtra").openPopup();
+
+   L.marker([12.9716, 77.5946]).addTo(map)
+  .bindPopup("Bengaluru, Karnataka").openPopup();
+
+ L.marker([17.3850, 78.4867]).addTo(map)
+  .bindPopup("Hyderabad, Telangana")
+.openPopup();
+
+
+    return () => map.remove();
+  }, []);
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({
     capacity: '',
@@ -124,10 +147,7 @@ const ColdStorage = () => {
         {/* Map Section */}
         <Col lg={6} className="mb-4  mt-4 mb-lg-0">
           <div className="map-container">
-            <img src={img}
-              alt="Cold storage locations" 
-              className="img-fluid rounded "
-            />
+             <div  id="map"></div>
             <div className="map-overlay">
               <Button variant="success" size="sm">
                 <FaMapMarkerAlt className="me-1" />
