@@ -1,14 +1,14 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiMenu, BiMoon, BiSun } from "react-icons/bi";
-import { FaLeaf } from "react-icons/fa";
+import { FaLeaf, FaShoppingCart } from "react-icons/fa";
 import {
   Container,
   Navbar as BsNavbar,
   Nav,
   Button,
-  NavDropdown,
 } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 
 const navLinks = [
   { path: "/", section: "home", display: "Home" },
@@ -23,8 +23,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [theme, setTheme] = useState("light");
   const [expanded, setExpanded] = useState(false);
+  const { cartItems } = useContext(CartContext); // ✅ Added CartContext
 
-  // Apply theme class to body when theme changes
   useEffect(() => {
     if (theme === "dark") {
       document.body.classList.add("dark");
@@ -57,9 +57,9 @@ const Navbar = () => {
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
       style={{
-        minHeight: "64px", // uniform navbar height
-        backgroundColor: "#fff", // keep white background
-        padding: "0.6rem 1rem", // balance spacing
+        minHeight: "64px",
+        backgroundColor: "#fff",
+        padding: "0.6rem 1rem",
         display: "flex",
         alignItems: "center",
         zIndex: 1050,
@@ -90,6 +90,15 @@ const Navbar = () => {
           </Nav>
 
           <div className="d-flex align-items-center gap-3">
+            <Button
+              variant="outline-success"
+              as={Link}
+              to="/cart"
+              className="rounded-pill px-3 d-flex align-items-center gap-2"
+            >
+              <FaShoppingCart />
+              Cart ({cartItems.length})
+            </Button>
             <Button
               variant="success"
               as={Link}

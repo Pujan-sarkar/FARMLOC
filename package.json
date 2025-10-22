@@ -1,7 +1,7 @@
 {
   "name": "farmloc",
   "version": "1.0.0",
-  "description": "",
+  "description": "<div align=\"center\">",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -18,8 +18,18 @@
   "dependencies": {
     "axios": "^1.11.0",
     "bootstrap": "^5.3.7",
+    "node": "^20.19.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pujan-sarkar/FARMLOC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pujan-sarkar/FARMLOC/issues"
+  },
+  "homepage": "https://github.com/Pujan-sarkar/FARMLOC#readme"
 }
